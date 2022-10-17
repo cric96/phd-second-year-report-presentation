@@ -11,11 +11,10 @@ aliases = [
 +++
 
 
-# A good title
-## Subtitles are important
-**Talk @ Somewhere**
+# A Language-based Software Engineering Approach for Cyber-Physical Swarms
+**PhD second year report**
 
-🎤 *Gianluca Aguzzi*
+🎤 *Gianluca Aguzzi*, supervision **Mirko Viroli**
 
 📧 [gianluca.aguzzi@unibo.it](mailto:gianluca.aguzzi@unibo.it)
 
