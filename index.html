@@ -1,0 +1,547 @@
+<!DOCTYPE html><html lang="en"><head>
+	<meta name="generator" content="Hugo 0.102.3">
+    <meta charset="utf-8">
+<title>Second Year PhD report</title>
+<meta name="description" content="A Language-based Software Engineering Approach for Cyber-Physical Swarms">
+<meta name="author" content="Gianluca Aguzzi">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/dist/reset.css">
+<link rel="stylesheet" href="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/dist/reveal.css">
+  <link rel="stylesheet" href="https://cric96.github.io/phd-second-year-report-presentation/css/custom-theme.min.1d16dc161e94bd44c6d9f19fcf6b367114e456b5f14c756f2ac45ab60af5afbe.css" id="theme"><link rel="stylesheet" href="https://cric96.github.io/phd-second-year-report-presentation/highlight-js/solarized-dark.min.css">
+    
+<link rel="stylesheet" href="https://gitcdn.link/repo/DanySK/css-blur-animation/master/blur.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oxygen Mono" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ubuntu Mono" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  </head>
+  <body>
+    
+    <div class="reveal">
+      <div class="slides">
+  
+
+    <section data-noprocess="" data-shortcode-slide="" data-background-iframe="https://cric96.github.io/phd-second-year-report-presentation/boids.html" data-preload="true" data-transition="zoom">
+<h2 id="a-language-based-software-engineering-approach-for-cyber-physical-swarms">A Language-based Software Engineering Approach for Cyber-Physical Swarms</h2>
+<p><strong>PhD second year report</strong></p>
+<p>🎤 <em>Gianluca Aguzzi</em>, supervisior <strong>Mirko Viroli</strong></p>
+<p>📧 <a href="mailto:gianluca.aguzzi@unibo.it">gianluca.aguzzi@unibo.it</a></p>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="context">Context</h2>
+<h3 class="accent" id="cyber-physical-swarms-cpsw">Cyber-Physical Swarms (<em>CPSW</em>)</h3>
+<div class="container">
+<span class="fragment col">
+  <h4 id="many-networked-agents">Many Networked Agents</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/network.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</span>
+<span class="fragment col">
+  <h4 id="cyber-physical-systems">Cyber-Physical Systems</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/cps.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</span>
+<span class="fragment col">
+  <h4 id="collective-behaviour">Collective Behaviour</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/ci.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</span>
+</div>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="context-1">Context</h2>
+<h3 class="accent" id="cyber-physical-swarms-cpsw-1">Cyber-Physical Swarms (<em>CPSW</em>)</h3>
+<div class="container">
+<div class="col ">
+<h4 id="many-networked-agents">Many Networked Agents</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/network.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+<div class="col ">
+<h4 id="cyber-physical-systems">Cyber-Physical Systems</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/cps.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+<div class="col ">
+<h4 id="collective-behaviour">Collective Behaviour</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/ci.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+</div>
+<div class="container">
+<div class="col ">
+<h3 class="ok" id="applications">Applications</h3>
+<ul>
+<li>Swarm robotics</li>
+<li>Crowd of (augmented) people</li>
+<li>Smart Cities</li>
+<li>Large-scale IoT systems</li>
+</ul>
+</div>
+</div>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="context-2">Context</h2>
+<h3 class="accent" id="cyber-physical-swarms-cpsw-2">Cyber-Physical Swarms (<em>CPSW</em>)</h3>
+<div class="container">
+<div class="col ">
+<h4 id="many-networked-agents">Many Networked Agents</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/network.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+<div class="col ">
+<h4 id="cyber-physical-systems">Cyber-Physical Systems</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/cps.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+<div class="col ">
+<h4 id="collective-behaviour">Collective Behaviour</h4>
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/ci.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+</div>
+<div class="container">
+<div class="col ">
+<h3 class="ok" id="applications">Applications</h3>
+<ul>
+<li>Swarm robotics</li>
+<li>Crowd of (augmented) people</li>
+<li>Smart Cities</li>
+<li>Large-scale IoT systems</li>
+</ul>
+</div>
+<div class="col ">
+<h3 class="bad" id="challenges">Challenges</h3>
+<ul>
+<li>Complex &amp; Layered IT networks</li>
+<li>Distributed Control</li>
+<li>Scale</li>
+<li>(Unwanted) Emergents</li>
+<li>Green Computing</li>
+</ul>
+</div>
+</div>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="engineering-applications-for-cpsws">Engineering Applications for CPSWs</h2>
+<p>Find a <strong>systematic</strong> methodology to synthesise and deploy <em>self-organising</em> behaviours of
+predictable outcomes for CPSW</p>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="engineering-applications-for-cpsws-1">Engineering Applications for CPSWs</h2>
+<p>Find a <strong>systematic</strong> methodology to synthesise and deploy <em>self-organising</em> behaviours of
+predictable outcomes for CPSW</p>
+<h4 class="accent" id="multi-faceted-scientific-problem">Multi-faceted scientific problem</h4>
+<ul>
+<li>Algorithms &amp; Methodologies (<em>how</em> to express collective behaviours)</li>
+<li>Middleware Dinamics (<em>how</em> to execute collective specifications)</li>
+<li>Deployment in Complex IT networks (<em>how</em> to collocate the computation <em>smartly</em>)</li>
+</ul>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 class="highlight" id="engineering-applications-for-cpsws-2">Engineering Applications for CPSWs</h2>
+<p>Find a <strong>systematic</strong> methodology to synthesise and deploy <em>self-organising</em> behaviours of
+predictable outcomes for CPSW</p>
+<h4 class="accent" id="multi-faceted-scientific-problem-1">Multi-faceted scientific problem</h4>
+<ul>
+<li>Algorithms &amp; Methodologies (<em>how</em> to express collective behaviours)</li>
+<li>Middleware Dynamics (<em>how</em> to execute collective specifications)</li>
+<li>Deployment in Complex IT networks (<em>how</em> to collocate the computation <em>smartly</em>)</li>
+</ul>
+<h4 class="highlight" id="current-approaches">Current Approaches</h4>
+<ul>
+<li>Nature-inspired algorithms (e.g., Automatic Desing)
+<ul>
+<li>Simple and robust</li>
+<li>
+
+<i class="fas  fa-thumbs-down "> </i> <span class="bad">Hardly scale with application complexity</span></li>
+</ul>
+</li>
+<li>Macro-programming approaches (e.g., Aggregate Computing)
+<ul>
+<li><strong>top-down</strong> approaches</li>
+<li>Reduce the <em>abstraction</em> gap</li>
+<li>
+
+<i class="fas  fa-thumbs-down "> </i> <span class="bad">Limited adaptivity against non-stationary environment</span></li>
+</ul>
+</li>
+<li>Machine Learning (e.g., Multi-Agent Reinforcement Learning)
+<ul>
+<li>Learn complex collective dynamics</li>
+<li>
+
+<i class="fas  fa-thumbs-down "> </i> <span class="bad">Typically are application specific</span></li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 id="proposed-approach">Proposed Approach</h2>
+<h4 class="highlight" id="language-based-engineering">Language-based engineering</h4>
+<p><strong>Models</strong>, <strong>tools</strong>, and <strong>algorithms</strong> are built around a <em>programming language</em></p>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 id="proposed-approach-1">Proposed Approach</h2>
+<h4 class="highlight" id="language-based-engineering-1">Language-based engineering</h4>
+<p><strong>Models</strong>, <strong>tools</strong>, and <strong>algorithms</strong> are built around a <em>programming language</em></p>
+<h4 class="accent" id="aggregate-computing">Aggregate Computing</h4>
+<ul>
+<li>Target/reference model</li>
+<li>Best match for CPSWs
+<ul>
+<li>Decouple the collective specification from the IT networks</li>
+<li>Scale naturally with nodes in the systems</li>
+<li>High-level abstraction to devise applications</li>
+</ul>
+</li>
+</ul>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-auto-animate="true">
+<h2 id="proposed-approach-2">Proposed Approach</h2>
+<h4 class="highlight" id="language-based-engineering-2">Language-based engineering</h4>
+<p><strong>Models</strong>, <strong>tools</strong>, and <strong>algorithms</strong> are built around a <em>programming language</em></p>
+<h4 class="accent" id="aggregate-computing-1">Aggregate Computing</h4>
+<ul>
+<li>Target/reference model</li>
+<li>Best match for CPSWs
+<ul>
+<li>Decouple the collective specification from the IT networks</li>
+<li>Scale naturally with nodes in the systems</li>
+<li>High-level abstraction to devise applications</li>
+</ul>
+</li>
+</ul>
+<h4 class="accent" id="directions-activities-overview">Directions (Activities overview)</h4>
+<ul>
+<li>Develop <em>algorithms</em> &amp; <em>methodologies</em> for CPSWs engineering
+<ul>
+<li><em>Swarm-based</em> API (e.g., Swarm-Based sensing-driven clustering)</li>
+<li>Engineering methodologies (e.g., Dynamic Decentralization Domains)</li>
+</ul>
+</li>
+<li>Integrate machine learning with Aggregate Computing stack
+<ul>
+<li><strong>Language</strong>-level (program sketching)</li>
+<li><strong>Middleware</strong>-level (distributed schedulers learning)</li>
+<li><strong>Deployment</strong>-level (pulverisation)</li>
+</ul>
+</li>
+</ul>
+</section><section>
+<h2 id="hybrid-collective-programming">Hybrid collective programming</h2>
+<h3 class="accent" id="aggregate-computing--machine-learning">Aggregate Computing + Machine Learning</h3>
+<h4 class="highlight" id="roadmap">Roadmap</h4>
+
+
+
+
+
+
+
+
+
+
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/roadmap-step-5.png" style="height:225px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+
+<p><strong>Reference</strong>: G. Aguzzi et al, <em>Machine Learning for Aggregate Computing: a Research Roadmap</em></p>
+</section><section>
+<h2 id="learn-collective-building-block">Learn collective building block</h2>
+<h3 class="accent" id="program-sketching">Program sketching</h3>
+<h4 class="accent" id="high-level-idea">High-Level idea</h4>
+<div class="container">
+<span class="fragment ">
+  <figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/synthesis-1.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+<h4 id="aggregate-program">Aggregate Program</h4>
+</span>
+<span class="fragment ">
+  <figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/synthesis-2.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+<h4 id="system-dynamic-specific-part-span-classaccentholespan">System-Dynamic Specific Part <span class="accent">(Hole)</span></h4>
+</span>
+<span class="fragment ">
+  <figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/synthesis-3.png" style="height:270px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+<h4 id="fill-the-hole-through-span-classaccentexperiencespan">Fill the Hole through <span class="accent">Experience</span></h4>
+</span>
+</div>
+<p><strong>Reference</strong>: G. Aguzzi et al, <em>Towards Reinforcement Learning-based Aggregate Computing</em></p>
+</section><section>
+<h2 id="distributed-reinforcement-based-schedulers">Distributed Reinforcement-Based Schedulers</h2>
+<h3 class="accent" id="adjust-local-scheduling-following-environment-condition">Adjust local scheduling following environment condition</h3>
+
+
+ <ul class=""> 
+<li class="fragment fade-in" data-fragment-index="0" style="color: #888;">
+The Aggregate Computing model <span class="accent">does not</span> enforce a global-synchronization
+</li>
+<li class="fragment fade-in" data-fragment-index="1" style="color: #888;">
+Current Implementation <span class="highlight"><i class="fa-solid  fa-solid  fa-arrow-right "> </i></span> Periodic possibly async execution
+</li>
+<li class="fragment fade-in" data-fragment-index="2" style="color: #888;">
+Frontier: <span class="accent">Time-Fluid Field-Based Coordination through Programmable Distributed Schedulers</span>
+</li>
+<li class="fragment fade-in" data-fragment-index="3" style="color: #888;">
+<strong><span class="accent">Reinforcement Learning</span></strong> agent tunes the local node schedulers
+</li>
+
+ </ul> 
+
+<p><strong>Reference</strong>: G.Aguzzi et al, <em>Addressing Collective Computations Efficiency through Reinforcement Learning</em></p>
+</section><section>
+<h2 id="what-we-learn-so-far">What we learn so far</h2>
+<h3 class="highlight" id="broad-impact">Broad Impact</h3>
+
+
+ <ul class=""> 
+<li class="fragment " style="color: #888;">
+Engineering <strong><span class="accent">Collective Intelligence</span></strong>
+</li>
+<li class="fragment " style="color: #888;">
+<strong><span class="accent">Green</span></strong> Computing
+</li>
+<li class="fragment " style="color: #888;">
+<strong><span class="accent">Multi-Agent</span></strong> Reinforcement Learning
+</li>
+<li class="fragment " style="color: #888;">
+<strong><span class="accent">Hybrid</span></strong> Programming Paradigm
+</li>
+
+ </ul> 
+
+<h3 class="highlight" id="challenges">Challenges</h3>
+
+
+ <ul class=""> 
+<li class="fragment " style="color: #888;">
+Multi-agent credit assignment problem
+</li>
+<li class="fragment " style="color: #888;">
+Multi-objective goals
+</li>
+<li class="fragment " style="color: #888;">
+Hand-crafted state encoding are inadequate (variable neighborhood)
+</li>
+<li class="fragment " style="color: #888;">
+Environment partial observability
+</li>
+
+ </ul> 
+
+</section><section>
+<h2 id="swarm-based-api">Swarm-based API</h2>
+<h3 class="accent" id="sensing-driven-clustering">Sensing-driven Clustering</h3>
+<div class="container">
+<div class="col ">
+<ul>
+<li>A useful Collective pattern for CPSWs applications
+<ul>
+<li>detected zones in danger (e.g., wildfires in forests)</li>
+<li>act following zone-level pattern (e.g., use pesticides in an agriculture field)</li>
+</ul>
+</li>
+<li>Contribution
+<ul>
+<li>distributed &amp; fault-tollerent sensing based clustering</li>
+<li>evaluation in several use cases</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="col ">
+<figure class="">
+    <img src="https://cric96.github.io/phd-second-year-report-presentation/gaussian.gif" style="height:360px; ; max-width: 95vw;max-height: 80vh;object-fit: contain;">
+    <figcaption>  </figcaption>
+  </figure>
+</div>
+</div>
+<p><strong>Reference</strong>: G.Aguzzi et al, <em>A field-based computing approach to sensing-driven clustering in robot swarms</em></p>
+</section><section>
+<h2 id="abstractions-for-complex-decentralised-application">Abstractions for Complex Decentralised Application</h2>
+<h3 class="accent" id="dynamic-decentralization-domains">Dynamic Decentralization Domains</h3>
+<p>Distributed <em>regions</em> formed for supporting <em>collective</em> sensing &amp; acting process</p>
+<ul>
+<li>Contribution
+<ul>
+<li>API (in Scala) for managing decentralised domains lifecycle</li>
+<li>Tested in a simulated environment</li>
+</ul>
+</li>
+</ul>
+<div class="container">
+<div class="col ">
+</div>
+<div class="col ">
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/nWLaglM0EkY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen="" title="YouTube Video"></iframe>
+</div>
+</div>
+<div class="col ">
+</div>
+</div>
+<p><strong>Reference</strong>: G.Aguzzi et al, <em>Dynamic Decentralization Domains for the Internet of Things</em></p>
+</section><section>
+<h2 id="aggregate-computing-research">Aggregate Computing Research</h2>
+<h3 class="accent" id="contribution">Contribution</h3>
+<ul>
+<li><strong>Reference</strong> R.Casadei et al, <em>ScaFI: A Scala DSL and Toolkit for Aggregate Programming</em>
+<ul>
+<li>Presentation of ScaFi – Framework for Aggregate Computing definition</li>
+</ul>
+</li>
+<li><strong>Reference</strong> R.Casadei et al, <em>Towards Automated Engineering for Collective Adaptive Systems: Vision and Research Directions</em></li>
+</ul>
+</section><section>
+<h2 id="ongoing-and-future-works">Ongoing (and Future) Works</h2>
+<ul>
+<li><em>Spatio-temporal</em> forecasting &amp; tracking leveraging Graph Neural Networks and Aggregate Computing (<strong>Period abroad activity</strong>)</li>
+<li><em>Automatic deployment</em> collective application leveraging Pulverised architecture and Machine Learning</li>
+<li><strong>Deep</strong> Reinforced-Distributed Schedulers</li>
+</ul>
+</section>
+<section data-noprocess="" data-shortcode-slide="" data-background-color="black" data-background-iframe="https://cric96.github.io/phd-second-year-report-presentation/waves-thanks.html" data-preload="true" data-transition="zoom">
+<h1 class="white-text" id="thank-you">Thank you!</h1>
+</section>
+
+  
+
+
+</div>
+      
+
+    </div>
+<script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-hugo/object-assign.js"></script>
+
+<a href="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/dist/print/" id="print-location" style="display: none;"></a>
+
+<script type="application/json" id="reveal-hugo-site-params">{"custom_theme":"custom-theme.scss","custom_theme_compile":true,"custom_theme_options":{"enablesourcemap":true,"targetpath":"css/custom-theme.css"},"height":900,"highlight_theme":"solarized-dark","history":true,"mermaid":[{"startOnLoad":false,"theme":"default"}],"slide_number":true,"theme":"serif","transition":"slide","transition_speed":"normal","width":1440}</script>
+<script type="application/json" id="reveal-hugo-page-params">null</script>
+
+<script src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/dist/reveal.js"></script>
+
+
+  
+  
+  <script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/plugin/markdown/markdown.js"></script>
+  
+  <script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/plugin/highlight/highlight.js"></script>
+  
+  <script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/plugin/zoom/zoom.js"></script>
+  
+  <script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/plugin/notes/notes.js"></script>
+  
+  
+  <script type="text/javascript" src="https://cric96.github.io/phd-second-year-report-presentation/reveal-js/plugin/notes/notes.js"></script>
+
+
+
+
+<script type="text/javascript">
+  
+  
+  function camelize(map) {
+    if (map) {
+      Object.keys(map).forEach(function(k) {
+        newK = k.replace(/(\_\w)/g, function(m) { return m[1].toUpperCase() });
+        if (newK != k) {
+          map[newK] = map[k];
+          delete map[k];
+        }
+      });
+    }
+    return map;
+  }
+  
+  var revealHugoDefaults = { center: true, controls: true, history: true, progress: true, transition: "slide" };
+
+  var revealHugoPlugins = { 
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom ]
+   };
+  var revealHugoSiteParams = JSON.parse(document.getElementById('reveal-hugo-site-params').innerHTML);
+  var revealHugoPageParams = JSON.parse(document.getElementById('reveal-hugo-page-params').innerHTML);
+  
+  var options = Object.assign({},
+    camelize(revealHugoDefaults),
+    camelize(revealHugoSiteParams),
+    camelize(revealHugoPageParams),
+    camelize(revealHugoPlugins));
+  Reveal.initialize(options);
+</script>
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@9.1.6/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({"startOnLoad":false,"theme":"default"});
+
+    let render = (event) => {
+      let mermaidElems = event.currentSlide.querySelectorAll('.mermaid');
+      if (!mermaidElems.length){
+          return
+      }
+      mermaidElems.forEach(mermaidElem => {
+          let processed = mermaidElem.getAttribute('data-processed');
+          if (!processed){
+              
+              mermaid.init(undefined, mermaidElem);
+          }
+      });
+    };
+    Reveal.addEventListener('slidechanged', render);
+    Reveal.addEventListener('ready', render);
+  </script>
+
+    <script>
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+</script>
+
+<script type="text/javascript" id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+
+    
+  
+
+</body></html>
