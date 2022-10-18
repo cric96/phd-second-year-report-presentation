@@ -109,7 +109,46 @@ aliases = [
 
 ---
 
+{{% slide auto-animate=true %}}
 ## Engineering Applications for CPSWs {.highlight}
+
 Find a **systematic** methodology to synthesise and deploy *self-organising* behaviours of
 predictable outcomes for CPSW
-## Goals {.accent}
+
+---
+
+{{% slide auto-animate=true %}}
+## Engineering Applications for CPSWs {.highlight}
+
+Find a **systematic** methodology to synthesise and deploy *self-organising* behaviours of
+predictable outcomes for CPSW
+
+### Multi-faceted scientific problem {.accent}
+- Algorithms & Methodologies (*how* to express collective behaviours)
+- Middleware Dinamycs (*how* to execute collective specifications)
+- Deployment in Complex IT networks
+
+---
+
+{{% slide auto-animate=true %}}
+## Engineering Applications for CPSWs {.highlight}
+
+Find a **systematic** methodology to synthesise and deploy *self-organising* behaviours of
+predictable outcomes for CPSW
+
+### Multi-faceted scientific problem {.accent}
+- Algorithms & Methodologies (*how* to express collective behaviours)
+- Middleware Dinamycs (*how* to execute collective specifications)
+- Deployment in Complex IT networks
+
+### Current Approaches 
+- Nature-inspired algorithms (e.g., Automatic Desing)
+    - simple and robust
+    - hardly scale with application complexity
+- Macro-programming appraoches (e.g., Aggregate Computing)
+    - top-down approches
+    - reduce the abstraction gap
+    - limited adaptivity against non-stationary environment (no learning)
+- Machine Learning (e.g., Multi-Agent Reinforcement Learning)
+    - learn complex collective dynamics
+    - tipically they are application specific
