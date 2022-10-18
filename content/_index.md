@@ -124,7 +124,7 @@ predictable outcomes for CPSW
 
 #### Multi-faceted scientific problem {.accent}
 - Algorithms & Methodologies (*how* to express collective behaviours)
-- Middleware Dinamics (*how* to execute collective specifications)
+- Middleware Dynamics (*how* to execute collective specifications)
 - Deployment in Complex IT networks (*how* to collocate the computation *smartly*)
 
 ---
