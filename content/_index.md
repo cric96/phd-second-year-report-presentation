@@ -1,6 +1,5 @@
  
 +++
-
 title = "Second Year PhD report"
 description = "A Language-based Software Engineering Approach for Cyber-Physical Swarms"
 outputs = ["Reveal"]
@@ -9,7 +8,7 @@ aliases = [
 ]
 
 +++
-
+{{% slide preload=true background-iframe="boids.html" transition="zoom" %}}
 
 ## A Language-based Software Engineering Approach for Cyber-Physical Swarms
 **PhD second year report**
@@ -282,3 +281,46 @@ predictable outcomes for CPSW
 {{% /row %}}
 
 **Reference**: G.Aguzzi et al, *A field-based computing approach to sensing-driven clustering in robot swarms*
+
+---
+
+## Abstractions for Complex Decentralised Application
+### Dynamic Decentralization Domains {.accent}
+Distributed *regions* formed for supporting *collective* sensing & acting process
+- Contribution
+  - API (in Scala) for managing decentralised domains lifecycle
+  - Tested in a simulated environment
+
+{{%row%}}
+{{%col%}}
+{{%/col%}}
+{{%col%}}
+{{< youtube id=nWLaglM0EkY >}}
+{{%/col%}}
+{{%col%}}
+{{%/col%}}
+{{%/row%}}
+
+
+**Reference**: G.Aguzzi et al, *Dynamic Decentralization Domains for the Internet of Things*
+
+---
+
+## Aggregate Computing Research
+### Contribution {.accent}
+- **Reference** R.Casadei et al, *ScaFI: A Scala DSL and Toolkit for Aggregate Programming*
+  - Presentation of ScaFi -- Framework for Aggregate Computing definition
+- **Reference** R.Casadei et al, *Towards Automated Engineering for Collective Adaptive Systems: Vision and Research Directions*
+
+---
+
+## Ongoing (and Future) Works
+- *Spatio-temporal* forecasting & tracking leveraging Graph Neural Networks and Aggregate Computing (**Period abroad activity**)
+- *Automatic deployment* collective application leveraging Pulverised architecture and Machine Learning
+- **Deep** Reinforced-Distributed Schedulers
+
+---
+
+{{% slide preload=true background-iframe="waves-thanks.html" transition="zoom" background-color="black" %}}
+
+# Thank you! {.white-text }
