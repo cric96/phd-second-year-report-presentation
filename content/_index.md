@@ -109,9 +109,7 @@ aliases = [
 
 ---
 
-## Engineering Applications for CPSWs
-### Goals
-- Collective Behaviour Decoupled from IT networks (**generalization**, focus on *functional* aspects)
-    - State-of-the art, macro-programming approaches {{< fa arrow-right >}} **Aggregate Computing**
-- Adaptive & Robust behaviour against environmental changes
-  - Machine Learning  {{< fa arrow-right >}} Multi Agent Reinforcement Learning Approaches
+## Engineering Applications for CPSWs {.highlight}
+Find a **systematic** methodology to synthesise and deploy *self-organising* behaviours of
+predictable outcomes for CPSW
+## Goals {.accent}

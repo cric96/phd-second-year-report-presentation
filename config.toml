@@ -1,5 +1,5 @@
 languageCode = "en-us"
-title = "Addressing Collective Computations Efficiency"
+title = "PhD Second Year Report"
 disableKinds = ["sitemap", "RSS"]
 theme = "reveal-hugo"
 publishDir = "build"
