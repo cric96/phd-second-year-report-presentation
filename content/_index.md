@@ -1,8 +1,8 @@
  
 +++
 
-title = "Guide for writing markdown slides"
-description = "A Hugo theme for creating Reveal.js presentations"
+title = "Second Year PhD report"
+description = "A Language-based Software Engineering Approach for Cyber-Physical Swarms"
 outputs = ["Reveal"]
 aliases = [
     "/guide/"
@@ -152,3 +152,42 @@ predictable outcomes for CPSW
 - Machine Learning (e.g., Multi-Agent Reinforcement Learning)
     - learn complex collective dynamics
     - tipically they are application specific
+
+---
+
+## Proposed Approach
+### Language-based engineering
+**Models**, **tools**, **algorithms** are built around a *programming language*
+### Aggregate Computing
+- target/reference model
+- best match for CPSWs
+    - decouple the collective specification from the IT networks
+    - scale naturally with nodes in the systems
+    - high-level abstraction to devise applications
+### Directions
+- Develop algorithms & methodologies for CPSWs engineering
+    - Swarm-Based clustering
+    - DCEps
+    - other
+- Integrate machine learning with Aggregate Computing stack
+    - Language-level (program sketching)
+    - Middleware-level (distributed schedulers learning)
+    - Deployment level (pulverisation) 
+
+---
+
+## Hybrid collective programming
+### Aggregate Computing + Machine Learning
+#### Roadmap
+
+---
+
+## Learn collective building block
+### Program sketching
+
+--- 
+
+## Distributed Schedulers
+
+
+---
