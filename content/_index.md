@@ -62,9 +62,9 @@ aliases = [
 ### Applications {.ok}
 - Swarm robotics
 - Crowd of (augmented) people
+- COMMunity-OrieNted WEARrable Computing Systems
 - Smart Cities
 - Large-scale IoT systems
-- COMMunity-OrieNted WEARrable Computing Systems 
 {{% /col %}}
 {{% /row %}}
 
